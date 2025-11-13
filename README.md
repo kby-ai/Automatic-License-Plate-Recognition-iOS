@@ -92,11 +92,17 @@ You can visit our `YouTube` video for `ANPR/ALPR` model's performance [here](htt
 
 ### 2 API Usages
   - Activate the `SDK` by calling the `setActivation` method:
-  ```kotlin
-    var ret = AlprSdk.setActivation("xxx...")
+  ```swift
+    var ret = ALPRSDK.setActivation("xxx...")
+  ```
+  - Get `LPR` coordinates by calling the `processImage` method:
+  ```swift
+    let processImage = pickedImage.fixOrientation()
+    let alprBoxes = ALPRSDK.processImage(processImage) as! [ALPRBox];
+    let imageWithBoxes = drawALPRBoxes(on: processImage, boxes: alprBoxes)
   ```
   - Extract plates using the `extractPlates` method:
-  ```kotlin
+  ```swift
    val alprResult: AlprResult = AlprSdk.process(
         SDK_IMAGE_TYPE.ULTALPR_SDK_IMAGE_TYPE_RGBA32,
         nativeBuffer, width.toLong(), height.toLong()
