@@ -30,7 +30,7 @@ The `ALPR` system consists of the following steps:
 - Vehicle detection
 - Number plate extraction
 - Charater segmentation
-- Optical Character Recognition(OCR) </br>
+- Optical Character Recognition(`OCR`) </br>
 
 The `ALPR` system works in these strides, the initial step is the location of the vehicle and capturing a vehicle image of front or back perspective of the vehicle, the second step is the localization of Number Plate and then extraction of vehicle Number Plate is an image. The final stride uses image segmentation strategy, for the segmentation a few techniques neural network, mathematical morphology, color analysis and histogram analysis. Segmentation is for individual character recognition. Optical Character Recognition (OCR) is one of the strategies to perceive the every character with the assistance of database stored for separate alphanumeric character.
 
@@ -95,17 +95,9 @@ You can visit our `YouTube` video for `ANPR/ALPR` model's performance [here](htt
   ```swift
     var ret = ALPRSDK.setActivation("xxx...")
   ```
-  - Get `LPR` coordinates by calling the `processImage` method:
+  - Get license number and its coordinates by calling the `processImage` method:
   ```swift
     let processImage = pickedImage.fixOrientation()
     let alprBoxes = ALPRSDK.processImage(processImage) as! [ALPRBox];
     let imageWithBoxes = drawALPRBoxes(on: processImage, boxes: alprBoxes)
-  ```
-  - Extract plates using the `extractPlates` method:
-  ```swift
-   val alprResult: AlprResult = AlprSdk.process(
-        SDK_IMAGE_TYPE.ULTALPR_SDK_IMAGE_TYPE_RGBA32,
-        nativeBuffer, width.toLong(), height.toLong()
-   )
-   val plates = AlprUtils.extractPlates(alprResult);
   ```
