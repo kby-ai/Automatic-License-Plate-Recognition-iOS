@@ -87,7 +87,8 @@ You can visit our `YouTube` video for `ANPR/ALPR` model's performance [here](htt
 
 > Project Navigator -> Build Settings -> Swift Compiler - General
 
-![image](e387323f0919.png)
+![image](https://github.com/user-attachments/assets/88d55cac-4507-428c-b9af-d6865ee02642)
+
 
 ### 2 API Usages
   - Activate the `SDK` by calling the `setActivation` method:
